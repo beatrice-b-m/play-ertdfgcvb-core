@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="utf-8">
+	<title>Testing</title>
+	<link rel="stylesheet" type="text/css" href="/css/simple_console.css">
+	<style type="text/css" media="screen">
+		html, body {
+			padding: 0;
+			margin: 0;
+			font-size: 1em;
+			line-height: 1.2;
+			font-family: 'Simple Console', monospace;
+		}
+		canvas {
+			position: absolute;
+            display: block;
+			margin: auto;
+			padding:40px;
+			left:0;
+            right:0;
+			top:0;
+            bottom:0;
+			/* width:100vw;
+			height:100vh; */
+			font-family: inherit;
+		}
+	</style>
+</head>
+<body>
+	<canvas></canvas>
+	<script type="module">
+		import { run } from '../../../src/run.js'
+		import * as program from './program.js'
+		run(program, { element : document.querySelector('pre') }).then(function(e){
+			console.log(e)
+		}).catch(function(e) {
+			console.warn(e.message)
+			console.log(e.error)
+		})
+	</script>
+</body>
+</html>
